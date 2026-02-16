@@ -14,3 +14,5 @@ I’m sorry for being rude, inconsiderate and insensitive. I value this more tha
 ***
 
 *Built with sincerity (and quite a lot of AI's help).*
+
+Link: https://asirir2026.github.io/Apology
