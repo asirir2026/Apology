@@ -8,51 +8,58 @@
         body, html { 
             margin: 0; padding: 0; height: 100%; overflow: hidden; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            cursor: none; background: #000;
+            cursor: none; background: #0b0d11; 
         }
 
-        /* Fixed background logic: Moving the blur here ensures it can be toggled */
+        /* Seattle Background with fog effect */
         .seattle-view {
             position: absolute;
             width: 100%; height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            background: linear-gradient(rgba(11, 22, 34, 0.5), rgba(11, 22, 34, 0.5)), 
                         url('https://komonews.com/resources/media2/16x9/3840/986/center/90/a85689a8-ad4d-4b20-8fd5-b59c781fab93-spaceneedle1.jpg');
             background-size: cover; background-position: center;
-            filter: blur(0.5px); 
+            filter: blur(8px); 
             transition: filter 2s ease-in-out;
         }
 
         #kite {
-            position: fixed; width: 60px; height: 60px;
-            z-index: 100; pointer-events: none; 
+            position: fixed; 
+            font-size: 50px; 
+            z-index: 100; 
+            pointer-events: none; 
             transform: translate(-50%, -50%) rotate(15deg);
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
         }
 
         .content-box {
             position: relative; z-index: 3;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(15, 25, 35, 0.6); 
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 40px; border-radius: 25px;
-            color: white; text-align: center; max-width: 450px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            color: #e0e6ed; 
+            text-align: center; max-width: 450px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             margin: auto; top: 50%; transform: translateY(-50%);
         }
 
-        h1 { font-size: 22px; color: #f9ca24; margin-bottom: 15px; }
-        .kannada-font { font-size: 1.2rem; margin-bottom: 20px; line-height: 1.8; }
+        h1 { font-size: 22px; color: #f3d47a; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(243, 212, 122, 0.3); }
+        
+        .kannada-font { font-size: 1.2rem; margin-bottom: 20px; line-height: 1.8; color: #dae3f0; }
 
         .btn {
-            background: #4b5320; /* Army Palette Base */
-            color: white; border: none; padding: 14px 28px;
+            background: #4b5320; 
+            color: #f1f3f5; border: none; padding: 14px 28px;
             border-radius: 50px; font-weight: bold; transition: 0.3s;
             cursor: none; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         .btn:hover { background: #626d39; transform: scale(1.05); }
 
-        #hidden-logic { display: none; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); animation: fadeIn 1s; }
+        #hidden-logic { display: none; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); animation: fadeIn 1s; }
+        .restore-status { color: #ffab91; font-weight: bold; margin-bottom: 10px; }
+        .restore-kannada { font-size: 1.1rem; color: #f3d47a; }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
@@ -62,23 +69,18 @@
 
 <div class="seattle-view" id="bg-fog"></div>
 
-<div id="kite">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 5 L85 50 L50 95 L15 50 Z" fill="#4b5320" stroke="#2a2e12" stroke-width="2"/>
-        <path d="M50 95 Q60 110 50 120" stroke="#626d39" stroke-width="3" fill="none"/>
-    </svg>
-</div>
+<div id="kite">🪁</div>
 
 <div class="content-box">
     <h1 class="kannada-font">ದೂರದ ಸಿಯಾಟಲ್.. ಹತ್ತಿರದ ಗಾಳಿಪಟ.</h1>
     <p class="kannada-font">"ಕೆಲವೊಮ್ಮೆ ಭಾವನೆಗಳ ದಾರ ಸಿಕ್ಕಿಬೀಳುತ್ತೆ, <br> ಮಾತುಗಳು ಹಾದಿ ತಪ್ಪುತ್ತವೆ."</p>
-    <p style="opacity: 0.9;">I realized my messages were stupid. I let a misunderstanding get the better of me, and I’m truly sorry for hurting you.</p>
+    <p style="opacity: 0.85; font-size: 0.95rem;">I realized my messages were stupid. I let a misunderstanding get the better of me, and I’m truly sorry for hurting you.</p>
     
     <button class="btn" onclick="restoreConnection()">Forgive me, please 🙏🏻</button>
     
     <div id="hidden-logic">
-        <p style="color: #ff7675; font-weight: bold; margin-bottom: 10px;">Status: System Restored to Sincerity. ✨</p>
-        <p class="kannada-font" style="font-size: 1.1rem; color: #f9ca24;">"ಗೊತ್ತಿಲ್ಲದೆ ನೋವು ಮಾಡಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ... <br> ಆ ಮಂಜಿನ ನಡುವೆ ದಾರಿ ಸ್ವಲ್ಪ ಮಿಸ್ ಆಗಿತ್ತು ಅಷ್ಟೇ."</p>
+        <p class="restore-status">Status: System Restored to Sincerity. ✨</p>
+        <p class="kannada-font restore-kannada">"ಗೊತ್ತಿಲ್ಲದೆ ನೋವು ಮಾಡಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ... <br> ಆ ಮಂಜಿನ ನಡುವೆ ದಾರಿ ಸ್ವಲ್ಪ ಮಿಸ್ ಆಯ್ತು."</p>
     </div>
 </div>
 
@@ -94,10 +96,10 @@
 
     function restoreConnection() {
         song.play().catch(() => console.log("Audio waiting for interaction"));
-        bg.style.filter = "blur(0px)"; /* Clears the fog */
+        bg.style.filter = "blur(0px)"; 
         document.getElementById('hidden-logic').style.display = 'block';
         const btn = document.querySelector('.btn');
-        btn.innerText = "Apology Sent 🤞🏻";
+        btn.innerText = "Apology Hopefully Accepted 🤞🏻";
         btn.style.background = "#2ecc71";
         alert("I'm so sorry, hopefully we can start from the scratch... 🔄");
     }
