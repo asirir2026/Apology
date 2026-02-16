@@ -1,4 +1,4 @@
-# To: The biggest Gaalipata fan I've met, SSR
+# To: The biggest *Gaalipata* fan I've met, SSR
 
 ### Project: Clearing the Fog
 
