@@ -13,4 +13,4 @@ I’m sorry for being rude, judgemental and insensitive. I value this more than 
 
 ***
 
-*Built with sincerity (and a bit of CSS magic with AI's help).*
+*Built with sincerity (and quite a lot of AI's help).*
