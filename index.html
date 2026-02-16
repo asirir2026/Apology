@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm so so so sorry 😭</title>
+    <style>
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            overflow: hidden; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: none; 
+        }
+        .seattle-view {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://komonews.com/resources/media2/16x9/3840/986/center/90/a85689a8-ad4d-4b20-8fd5-b59c781fab93-spaceneedle1.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            filter: blur(0.5px);
+            transition: filter 2s ease-in-out;
+        }
+        #kite {
+            position: fixed;
+            font-size: 50px;
+            z-index: 100;
+            pointer-events: none; 
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            /* Subtle tilt for realism */
+            transform: translate(-50%, -50%) rotate(10deg);
+        }
+        .content-box {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 40px;
+            border-radius: 25px;
+            color: white;
+            text-align: center;
+            max-width: 450px;
+            z-index: 3;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        h1 { font-size: 22px; color: #f9ca24; margin-bottom: 15px; }
+        
+        .kannada-font {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            /* Keeps the kite visible over the button */
+            cursor: none; 
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+        .btn:hover { transform: translateY(-2px); background: #a29bfe; }
+        #hidden-logic { 
+            display: none; 
+            margin-top: 25px; 
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+<audio id="song" loop>
+    <source src="minchagi.mp3" type="audio/mpeg">
+</audio>
+<div class="seattle-view">
+    <div id="kite">🪁</div>
+    
+    <div class="content-box" id="box">
+        <h1 class="kannada-font">ದೂರದ ಸಿಯಾಟಲ್.. ಹತ್ತಿರದ ಗಾಳಿಪಟ.</h1>
+        
+        <p class="kannada-font">
+            "ಕೆಲವೊಮ್ಮೆ ಭಾವನೆಗಳ ದಾರ ಸಿಕ್ಕಿಬೀಳುತ್ತೆ, <br>
+            ಮಾತುಗಳು ಹಾದಿ ತಪ್ಪುತ್ತವೆ."
+        </p>
+        <p style="opacity: 0.9;">I know my words were harsh. I let a misunderstanding get the better of me, and I’m truly sorry for hurting you.</p>
+        <button class="btn" onclick="restoreConnection()">Reconnect the Thread 🧵</button>
+        <div id="hidden-logic">
+            <p style="color: #ff7675; font-weight: bold; margin-bottom: 10px;">
+                Status: System Restored to Sincerity. ✨
+            </p>
+            
+            <p class="kannada-font" style="font-size: 1.1rem; color: #f9ca24;">
+                "ಗೊತ್ತಿಲ್ಲದೆ ನೋವು ಮಾಡಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ... <br>
+                ಆ ಮಂಜಿನ ನಡುವೆ ದಾರಿ ಸ್ವಲ್ಪ ಮಿಸ್ ಆಗಿತ್ತು ಅಷ್ಟೇ."
+            </p>
+            
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                (Please forgive me for the hurt I caused... <br>
+                the path was just temporarily lost in the fog.)
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    const kite = document.getElementById('kite');
+    const song = document.getElementById('song');
+    document.addEventListener('mousemove', (e) => {
+        kite.style.left = e.clientX + 'px';
+        kite.style.top = e.clientY + 'px';
+    });
+    function restoreConnection() {
+        song.play().catch(e => console.log("No audio available…"));
+        document.getElementById('hidden-logic').style.display = 'block';
+        const btn = document.querySelector('.btn');
+        btn.innerText = "Connection Restored 🤞🏻";
+        btn.style.background = "#2ecc71";
+        
+        alert("I'm so sorry, hopefully we can start from the scratch... 🔄");
+    }
+</script>
+</body>
+</html>
